@@ -1,0 +1,347 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container */
+.piano-container {
+    background-color: #f3f3f5;
+    border: 2px solid #d7d7d7;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1400px;
+    width: 100%;
+}
+
+/* Display Area */
+.display {
+    background-color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.display-content {
+    text-align: center;
+}
+
+/* Lesson & Notes Section */
+.lesson-notes-section {
+    background-color: #ffffff;
+    border: 2px solid #d7d7d7;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.lesson-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.notes-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 44px;
+}
+
+.label {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.lesson-selector {
+    background-color: #f3f3f5;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.lesson-name {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.expand-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #000000;
+}
+
+.notes-container {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+}
+
+.note-item {
+    background-color: #f3f3f5;
+    border-radius: 10px;
+    padding: 10px;
+    width: 54px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    text-align: center;
+}
+
+/* Piano Keyboard */
+.piano-keyboard {
+    background-color: #ffffff;
+    border: 2px solid #d7d7d7;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    height: 300px;
+}
+
+.white-key {
+    background-color: #f3f3f5;
+    border: 2px solid #3d3d3d;
+    border-radius: 0 0 4px 4px;
+    width: 80px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+    transition: all 0.1s ease;
+}
+
+.white-key:hover {
+    background-color: #e8e8e8;
+}
+
+.white-key.active {
+    background-color: #d0d0d0;
+    transform: translateY(2px);
+}
+
+.black-key {
+    background-color: #000000;
+    border: 2px solid #3d3d3d;
+    border-radius: 0 0 4px 4px;
+    width: 60px;
+    height: 157px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    z-index: 2;
+    transition: all 0.1s ease;
+    color: #ffffff;
+}
+
+.black-key:hover {
+    background-color: #333333;
+}
+
+.black-key.active {
+    background-color: #666666;
+    transform: translateY(2px);
+}
+
+/* Position black keys (map by note to avoid nth-child pitfalls) */
+.black-key[data-note="C#4"] { left: 55px; }
+.black-key[data-note="D#4"] { left: 145px; }
+.black-key[data-note="F#4"] { left: 325px; }
+.black-key[data-note="G#4"] { left: 415px; }
+.black-key[data-note="A#4"] { left: 505px; }
+.black-key[data-note="C#5"] { left: 685px; }
+.black-key[data-note="D#5"] { left: 775px; }
+.black-key[data-note="F#5"] { left: 955px; }
+.black-key[data-note="G#5"] { left: 1045px; }
+.black-key[data-note="A#5"] { left: 1135px; }
+
+/* Dashboard */
+.dashboard {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pressed-keys-section {
+    background-color: #ffffff;
+    border: 2px solid #d7d7d7;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex: 1;
+}
+
+.pressed-keys-display {
+    background-color: #f3f3f5;
+    border-radius: 10px;
+    padding: 10px;
+    width: 88px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.features-section {
+    background-color: #ffffff;
+    border: 2px solid #d7d7d7;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    width: 852px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 44px;
+}
+
+.instrument-selector {
+    background-color: #f3f3f5;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.instrument-name {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.bpm-display {
+    background-color: #f3f3f5;
+    border-radius: 10px;
+    padding: 10px;
+    width: 88px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.control-button {
+    background-color: #f3f3f5;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    height: 44px;
+    width: 128px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.control-button:hover {
+    background-color: #e8e8e8;
+}
+
+.control-button.active {
+    background-color: #007AFF;
+    color: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .piano-keyboard {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    
+    .dashboard {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .features-section {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .lesson-notes-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .notes-container {
+        flex-wrap: wrap;
+    }
+    
+    .white-key {
+        width: 60px;
+        height: 250px;
+    }
+    
+    .black-key {
+        width: 45px;
+        height: 130px;
+    }
+}

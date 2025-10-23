@@ -1,0 +1,412 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, sans-serif;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main container */
+.piano-container {
+  background-color: #f3f3f5;
+  border: 2px solid #d7d7d7;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+/* Display Area */
+.display {
+  background-color: #000000;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.display-content {
+  text-align: center;
+}
+
+/* Digital font for the display history */
+@font-face {
+  font-family: 'DS-DIGI';
+  src: url('/fonts/DS-DIGI.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.display-history {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DS-DIGI', 'SF Pro Display', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.history-note {
+  color: #ffffff;
+}
+
+/* Lesson & Notes Section */
+.lesson-notes-section {
+  background-color: #ffffff;
+  border: 2px solid #d7d7d7;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.notes-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 44px;
+}
+
+.label {
+  font-size: 18px;
+  color: #000000;
+  font-weight: 400;
+}
+
+.lesson-selector {
+  background-color: #f3f3f5;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.lesson-name {
+  font-size: 18px;
+  color: #000000;
+  font-weight: 600;
+}
+
+.expand-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #000000;
+}
+
+.notes-container {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.note-item {
+  background-color: #f3f3f5;
+  border-radius: 10px;
+  padding: 10px;
+  width: 54px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+}
+
+.note-item.target {
+  outline: 2px solid #007aff;
+}
+
+.note-item.correct {
+  background-color: #22c55e; /* green */
+  color: #ffffff;
+}
+
+/* White-key keyboard section */
+.piano-keyboard {
+  background-color: #ffffff;
+  border: 2px solid #d7d7d7;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 220px;
+  width: 1400px;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  --white-key-width: 90px;
+  --white-key-gap: max(0px, calc((100% - (15 * var(--white-key-width))) / 14));
+}
+
+.keys-layout {
+  position: relative;
+  width: 100%;
+}
+
+.white-keys-grid {
+  display: flex;
+  width: 100%;
+  gap: var(--white-key-gap);
+  border-radius: 0 0 6px 6px;
+}
+
+.white-key {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: #f8f8fa;
+  border: 2px solid #3d3d3d;
+  border-radius: 0 0 6px 6px;
+  height: 200px;
+  padding-bottom: 12px;
+  cursor: pointer;
+  transition: background-color 0.1s ease, transform 0.1s ease;
+  outline: none;
+  appearance: none;
+  flex: 0 0 var(--white-key-width);
+  max-width: var(--white-key-width);
+}
+
+.white-key:hover {
+  background-color: #ececf0;
+}
+
+.white-key.active {
+  background-color: #d7d7dc;
+  transform: translateY(4px);
+}
+
+.black-keys-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 65%;
+  pointer-events: none;
+}
+
+.black-key {
+  position: absolute;
+  top: 0;
+  width: calc(var(--white-key-width) * 0.66);
+  height: 160px;
+  background-color: #0d0d0f;
+  border: 2px solid #1f1f24;
+  border-radius: 0 0 6px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  cursor: pointer;
+  outline: none;
+  pointer-events: auto;
+  z-index: 5;
+  transform: translateX(-50%);
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+.black-key:hover {
+  background-color: #1f1f24;
+}
+
+.black-key.active {
+  background-color: #3a3a44;
+  transform: translateX(-50%) translateY(3px);
+}
+
+/* Dashboard */
+.dashboard {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.pressed-keys-section {
+  background-color: #ffffff;
+  border: 2px solid #d7d7d7;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.pressed-keys-display {
+  background-color: #f3f3f5;
+  border-radius: 10px;
+  padding: 10px;
+  width: 220px; /* wider to keep content inside */
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  overflow: hidden; /* prevent text from overflowing */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.features-section {
+  background-color: #ffffff;
+  border: 2px solid #d7d7d7;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  width: 852px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 44px;
+}
+
+.instrument-selector {
+  background-color: #f3f3f5;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.instrument-select,
+.lesson-select,
+.bpm-input {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.instrument-name {
+  font-size: 18px;
+  color: #000000;
+  font-weight: 600;
+}
+
+.bpm-display {
+  background-color: #f3f3f5;
+  border-radius: 10px;
+  padding: 10px;
+  width: 88px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.control-button {
+  background-color: #f3f3f5;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  height: 44px;
+  width: 128px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.control-button:hover {
+  background-color: #e8e8e8;
+}
+
+.control-button.active {
+  background-color: #007aff;
+  color: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .piano-keyboard {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .dashboard {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .features-section {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .lesson-notes-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .notes-container {
+    flex-wrap: wrap;
+  }
+
+  .white-key {
+    width: 60px;
+    height: 250px;
+  }
+
+  .black-key {
+    width: 45px;
+    height: 130px;
+  }
+}

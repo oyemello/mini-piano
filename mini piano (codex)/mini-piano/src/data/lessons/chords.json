@@ -1,0 +1,23 @@
+{
+  "id": "chords",
+  "title": "Basic Chords (C, F, G, Am)",
+  "bpm": 72,
+  "events": [
+    { "time": 0, "note": "C4", "duration": 2 },
+    { "time": 0, "note": "E4", "duration": 2 },
+    { "time": 0, "note": "G4", "duration": 2 },
+
+    { "time": 2.5, "note": "F4", "duration": 2 },
+    { "time": 2.5, "note": "A4", "duration": 2 },
+    { "time": 2.5, "note": "C5", "duration": 2 },
+
+    { "time": 5, "note": "G4", "duration": 2 },
+    { "time": 5, "note": "B4", "duration": 2 },
+    { "time": 5, "note": "D5", "duration": 2 },
+
+    { "time": 7.5, "note": "A4", "duration": 2 },
+    { "time": 7.5, "note": "C5", "duration": 2 },
+    { "time": 7.5, "note": "E5", "duration": 2 }
+  ]
+}
+

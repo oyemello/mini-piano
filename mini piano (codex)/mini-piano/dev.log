@@ -1,0 +1,79 @@
+
+> mini-piano@0.1.0 dev
+> next dev --turbopack
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/mello/Downloads/mini piano/mini piano (codex)/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/package-lock.json
+
+   ▲ Next.js 15.5.6 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://10.117.46.223:3000
+
+ ✓ Starting...
+ ✓ Ready in 929ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.6s
+ GET / 200 in 3041ms
+ GET / 200 in 209ms
+ GET / 200 in 247ms
+ GET / 200 in 237ms
+ ✓ Compiled /favicon.ico in 413ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 679ms
+ ✓ Compiled in 158ms
+ GET / 200 in 308ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 232ms
+ GET / 200 in 155ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 241ms
+ GET / 200 in 110ms
+ GET / 200 in 105ms
+ ✓ Compiled in 197ms
+ GET / 200 in 271ms
+ ✓ Compiled in 200ms
+ GET / 200 in 277ms
+ ✓ Compiled in 194ms
+ ✓ Compiled in 64ms
+ ✓ Compiled in 27ms
+ ✓ Compiled in 45ms
+ ✓ Compiled in 39ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.rhoiz6di8qd'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.rhoiz6di8qd'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 757ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.soondilgch'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.soondilgch'
+}
+[Error: ENOENT: no such file or directory, open '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.rhoiz6di8qd'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.rhoiz6di8qd'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.hedjegea9up'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.hedjegea9up'
+}
+[Error: ENOENT: no such file or directory, open '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.vif9adty88'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mello/Downloads/mini piano/mini piano (codex)/mini-piano/.next/static/development/_buildManifest.js.tmp.vif9adty88'
+}
+ GET / 200 in 139ms
+ GET / 200 in 150ms
+ GET / 200 in 172ms
+ GET / 200 in 93ms
+ GET / 200 in 130ms
+ GET / 200 in 166ms
